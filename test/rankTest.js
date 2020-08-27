@@ -1,5 +1,56 @@
 const rankTest = require('ava');
-const {voyageRisk, hasChina, captainHistoryRisk} = require("../src/rank")
+const {voyageRisk, hasChina, captainHistoryRisk, voyageProfitFactor} = require("../src/rank")
+
+const voyage = {
+  zone: 'china',
+  length: 20,
+};
+const history = [
+  {
+    zone: 'china',
+    profit: -2,
+  },
+  {
+    zone: 'east-indies',
+    profit: -2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  },
+  {
+    zone: 'east-indies',
+    profit: 2,
+  }
+];
 
 rankTest('rank voyageRisk-case1. voyage length more than 4 and less than 8', t => {
   const voyage = {
@@ -86,33 +137,6 @@ rankTest('rank captainHistoryRisk-case1. history length less than 5 and zone is 
 });
 
 rankTest('rank captainHistoryRisk-case2. history length more than 5 and zone is china and history has china', t => {
-  const voyage = {
-    zone: 'china',
-    length: 9,
-  };
-  const history = [
-    {
-      zone: 'east-indies',
-      profit: -2,
-    },
-    {
-      zone: 'china',
-      profit: -2,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    },
-    {
-      zone: 'china',
-      profit: 5,
-    },
-    {
-      zone: 'east-indies',
-      profit: 5,
-    }
-  ];
-
   const result = captainHistoryRisk(voyage, history);
   const expect = 1;
   t.is(result, expect);
@@ -132,5 +156,12 @@ rankTest('rank captainHistoryRisk-case3. history length less than 5 and zone is 
 
   const result = captainHistoryRisk(voyage, history);
   const expect = 6;
+  t.is(result, expect);
+});
+
+rankTest('rank voyageProfitFactor-case1. history length more than 18 and zone is china', t => {
+
+  const result = voyageProfitFactor(voyage, history);
+  const expect = 7;
   t.is(result, expect);
 });
