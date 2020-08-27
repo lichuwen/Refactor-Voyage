@@ -77,6 +77,7 @@ function rating (voyage, history) {
 module.exports = {
   voyageRisk,
   hasChina,
+  captainHistoryRisk,
 };
 
 const voyage = {
@@ -90,7 +91,7 @@ const history = [
   },{
     zone: 'west-indies',
     profit: 15,
-  },{
+  }, {
     zone: 'china',
     profit: -2,
   },
@@ -99,5 +100,5 @@ const history = [
     profit: 7,
   },
 ];
-const myRating = rating(voyage, history);
-console.log(`myRating: ${myRating}`);
+// const myRating = rating(voyage, history);
+// console.log(`myRating: ${myRating}`);
