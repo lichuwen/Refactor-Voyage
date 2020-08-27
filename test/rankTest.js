@@ -63,3 +63,20 @@ rankTest('rank hasChina-case1. history zone has no china', t => {
   const expect = false;
   t.is(result, expect);
 });
+
+rankTest('rank hasChina-case2. history zone has china', t => {
+  const history = [
+    {
+      zone: 'east-indies',
+      profit: 5,
+    },
+    {
+      zone: 'china',
+      profit: 5,
+    }
+  ];
+
+  const result = hasChina(history);
+  const expect = true;
+  t.is(result, expect);
+});
