@@ -79,6 +79,7 @@ module.exports = {
   hasChina,
   captainHistoryRisk,
   voyageProfitFactor,
+  rating
 };
 
 const voyage = {
