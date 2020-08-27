@@ -116,10 +116,6 @@ rankTest('rank hasChina-case2. history zone has china', t => {
 });
 
 rankTest('rank captainHistoryRisk-case1. history length less than 5 and zone is china and history has china', t => {
-  const voyage = {
-    zone: 'china',
-    length: 9,
-  };
   const history = [
     {
       zone: 'east-indies',
@@ -143,10 +139,6 @@ rankTest('rank captainHistoryRisk-case2. history length more than 5 and zone is 
 });
 
 rankTest('rank captainHistoryRisk-case3. history length less than 5 and zone is not china', t => {
-  const voyage = {
-    zone: 'china',
-    length: 9,
-  };
   const history = [
     {
       zone: 'east-indies',
@@ -160,7 +152,6 @@ rankTest('rank captainHistoryRisk-case3. history length less than 5 and zone is 
 });
 
 rankTest('rank voyageProfitFactor-case1. history length more than 18 and zone is china', t => {
-
   const result = voyageProfitFactor(voyage, history);
   const expect = 7;
   t.is(result, expect);
