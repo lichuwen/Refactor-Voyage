@@ -32,10 +32,11 @@ function deliveryDate (anOrder, isRush) {
       'NH',
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 3;
-    }
-    else {
+    } else {
       deliveryTime = 4;
     }
     return anOrder.placedOn.plusDays(2 + deliveryTime);
   }
 }
+
+module.exports = {deliveryDate}

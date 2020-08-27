@@ -11,6 +11,7 @@ employeeTest('employee test-validateType. Employee with unknown type.', t => {
     }
 });
 
+
 employeeTest('employee test-toString.', t => {
     const expect = "karen (engineer)";
     const result = new Employee("karen","engineer");
