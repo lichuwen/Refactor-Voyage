@@ -156,3 +156,13 @@ rankTest('rank voyageProfitFactor-case1. history length more than 18 and zone is
   const expect = 7;
   t.is(result, expect);
 });
+
+rankTest('rank voyageProfitFactor-case2. history length more than 18 and zone is not china', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 20,
+  };
+  const result = voyageProfitFactor(voyage, history);
+  const expect = 3;
+  t.is(result, expect);
+});
