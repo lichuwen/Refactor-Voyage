@@ -10,3 +10,9 @@ employeeTest('employee test-validateType. Employee with unknown type.', t => {
         t.is(e.message, expect);
     }
 });
+
+employeeTest('employee test-toString.', t => {
+    const expect = "karen (engineer)";
+    const result = new Employee("karen","engineer");
+    t.is(expect, result.toString());
+});
