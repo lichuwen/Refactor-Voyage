@@ -172,3 +172,13 @@ rankTest('rank rating-case1. Rating is B', t => {
   const expect = 'B';
   t.is(result, expect);
 });
+
+rankTest('rank rating-case2. Rating is A', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 1,
+  };
+  const result = rating(voyage, history);
+  const expect = 'A';
+  t.is(result, expect);
+});
