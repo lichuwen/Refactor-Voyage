@@ -43,3 +43,14 @@ rankTest('rank voyageRisk-case2. voyage length more than 8 and not include zone'
   const expect = 4;
   t.is(result, expect);
 });
+
+rankTest('rank voyageRisk-case3. voyage length more than 8 and include zone', t => {
+  const voyage = {
+    zone: 'east-indies',
+    length: 9,
+  };
+
+  const result = voyageRisk(voyage);
+  const expect = 8;
+  t.is(result, expect);
+});
