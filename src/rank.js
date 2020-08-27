@@ -102,5 +102,5 @@ const history = [
     profit: 7,
   },
 ];
-// const myRating = rating(voyage, history);
-// console.log(`myRating: ${myRating}`);
+const myRating = rating(voyage, history);
+console.log(`myRating: ${myRating}`);
