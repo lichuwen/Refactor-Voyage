@@ -15,6 +15,11 @@ function judgeVoyageLength(voyage, len) {
   return voyage.length > len;
 }
 
+
+function judgeHistoryLength(history, len) {
+  return history.length > len;
+}
+
 function isChinaHistory(voyage, history) {
   return voyage.zone === 'china' && hasChina(history);
 }
