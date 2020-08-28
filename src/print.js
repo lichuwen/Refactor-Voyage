@@ -13,21 +13,19 @@ function calOutstanding(invoice) {
   return outstanding;
 }
 
-function printOwing (invoice) {
-
+function getTextResult(invoice) {
   let result = "";
   result += `***********************\n`;
   result += `**** Customer Owes ****\n`;
   result += `***********************\n`;
-
-  // calculate outstanding
-  let outstanding = calOutstanding(invoice);
-
-  // print details
   result += `name: ${invoice.customer}\n`;
-  result += `amount: ${outstanding}\n`;
+  result += `amount: ${calOutstanding(invoice)}\n`;
   result += `amount: ${getDate().toLocaleString()}`;
   return result;
+}
+
+function printOwing (invoice) {
+  return getTextResult(invoice);
 }
 
 module.exports = {printOwing};
