@@ -10,7 +10,8 @@ printTest('print printOwing-case1. ', t => {
         ]
     };
     const today = new Date();
-    const dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
+    const dueDate = new Date();
+    dueDate.setDate(today.getDate());
 
     const result = printOwing(invoice);
     const expect = '***********************\n' +

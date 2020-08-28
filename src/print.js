@@ -1,3 +1,10 @@
+function getDate() {
+  const today = new Date();
+  const dueDate = new Date();
+  dueDate.setDate(today.getDate());
+  return dueDate.toLocaleDateString();
+}
+
 function printOwing (invoice) {
   let outstanding = 0;
   let result = "";
@@ -10,15 +17,10 @@ function printOwing (invoice) {
     outstanding += o.amount;
   }
 
-  // record due date
-  const today = new Date();
-  invoice.dueDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 30);
-
   // print details
   result += `name: ${invoice.customer}\n`;
   result += `amount: ${outstanding}\n`;
-  result += `amount: ${invoice.dueDate.toLocaleDateString()}`;
-  // console.log(result);
+  result += `amount: ${getDate()}`;
   return result;
 }
 
