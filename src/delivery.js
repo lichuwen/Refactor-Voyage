@@ -1,15 +1,21 @@
 function deliveryDate (anOrder, isRush) {
+  const MASSACHUSETTS = 'MA';
+  const CONNECTICUT = 'CT';
+
+  const NEW_YORK = 'NY';
+  const NEW_HAMPSHIRE = 'NH';
+  const MAINE = 'ME';
   if (isRush) {
     let deliveryTime;
     if ([
-      'MA',
-      'CT',
+      MASSACHUSETTS,
+      CONNECTICUT,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 1;
     }
     else if ([
-      'NY',
-      'NH',
+      NEW_YORK,
+      NEW_HAMPSHIRE,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 2;
     }
@@ -21,15 +27,15 @@ function deliveryDate (anOrder, isRush) {
   else {
     let deliveryTime;
     if ([
-      'MA',
-      'CT',
-      'NY',
+      MASSACHUSETTS,
+      CONNECTICUT,
+      NEW_YORK,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 2;
     }
     else if ([
-      'ME',
-      'NH',
+      MAINE,
+      NEW_HAMPSHIRE,
     ].includes(anOrder.deliveryState)) {
       deliveryTime = 3;
     } else {
