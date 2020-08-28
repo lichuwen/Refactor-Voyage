@@ -46,6 +46,15 @@ deliveryTest('delivery deliveryDate-case4. Order MA and rush is false', t => {
     const result = deliveryDate(anOrder, isRush);
     t.is(result, except);
 })
+deliveryTest('delivery deliveryDate-case5. Order ME and rush is false', t => {
+    anOrder.deliveryState = 'ME'
+    plusDay.setDate(today.getDate() + 5);
+    const except = plusDay.toLocaleDateString();
+    const result = deliveryDate(anOrder, false);
+    t.is(result, except);
+})
+
+
 
 
 
