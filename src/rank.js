@@ -37,27 +37,25 @@ function captainHistoryRisk(voyage, history) {
   return result;
 }
 
-function voyageProfitFactor (voyage, history) {
+function calProfitByIsChina(voyage, history) {
+  let result = 3;
+  result += judgeHistoryLength(history, 10) ? judgeVoyageLength(voyage, 12) ? 2 : 1 : 0;
+  result -= judgeVoyageLength(voyage, 18) ? 1 : 0;
+  return result;
+}
+
+function voyageProfitFactor(voyage, history) {
   let result = 2;
   if (hasZone(voyage)) {
     result += 1;
   }
   if (isChinaHistory(voyage, history)) {
-    result += 3;
-    if (history.length > 10) {
-      result += 1;
-    }
-    if (voyage.length > 12) {
-      result += 1;
-    }
-    if (voyage.length > 18) {
-      result -= 1;
-    }
+    result += calProfitByIsChina(voyage, history);
   } else {
-    if (history.length > 8) {
+    if (judgeHistoryLength(history, 8)) {
       result += 1;
     }
-    if (voyage.length > 14) {
+    if (judgeVoyageLength(voyage, 14)) {
       result -= 1;
     }
   }
