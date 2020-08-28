@@ -32,13 +32,9 @@ function getDeliveryTimeByFalse(anOrder) {
   return 4;
 }
 
-function deliveryDate (anOrder, isRush) {
-  if (isRush) {
-    return anOrder.placedOn.plusDays(1 + getDeliveryTimeByTrue(anOrder));
-  }
-  else {
-    return anOrder.placedOn.plusDays(2 + getDeliveryTimeByFalse(anOrder));
-  }
+function deliveryDate(anOrder) {
+  return anOrder.isRush ? anOrder.placedOn.plusDays(1 + getDeliveryTimeByTrue(anOrder)) : anOrder.placedOn.plusDays(2 + getDeliveryTimeByFalse(anOrder));
+  ;
 }
 
 module.exports = {deliveryDate}
