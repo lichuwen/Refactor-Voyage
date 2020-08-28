@@ -44,6 +44,14 @@ function calProfitByIsChina(voyage, history) {
   return result;
 }
 
+
+function calProfitByNotChina(voyage, history) {
+  let result = 0;
+  result += judgeHistoryLength(history, 8) ? 1 : 0;
+  result -= judgeVoyageLength(voyage, 14) ? 1 : 0;
+  return result;
+}
+
 function voyageProfitFactor(voyage, history) {
   let result = 2;
   if (hasZone(voyage)) {
@@ -52,12 +60,7 @@ function voyageProfitFactor(voyage, history) {
   if (isChinaHistory(voyage, history)) {
     result += calProfitByIsChina(voyage, history);
   } else {
-    if (judgeHistoryLength(history, 8)) {
-      result += 1;
-    }
-    if (judgeVoyageLength(voyage, 14)) {
-      result -= 1;
-    }
+    result += calProfitByNotChina(voyage, history);
   }
   return result;
 }
