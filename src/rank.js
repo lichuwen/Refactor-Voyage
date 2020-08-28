@@ -57,11 +57,7 @@ function voyageProfitFactor(voyage, history) {
   if (hasZone(voyage)) {
     result += 1;
   }
-  if (isChinaHistory(voyage, history)) {
-    result += calProfitByIsChina(voyage, history);
-  } else {
-    result += calProfitByNotChina(voyage, history);
-  }
+  result += isChinaHistory(voyage, history) ? calProfitByIsChina(voyage, history) : calProfitByNotChina(voyage, history);
   return result;
 }
 
