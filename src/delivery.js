@@ -4,17 +4,19 @@ const NEW_YORK = 'NY';
 const NEW_HAMPSHIRE = 'NH';
 const MAINE = 'ME';
 
+function getStates(state1,state2,state3) {
+  return [
+    state1,
+    state2,
+    state3
+  ]
+}
+
 function getDeliveryTime(anOrder) {
-  if ([
-    MASSACHUSETTS,
-    CONNECTICUT,
-  ].includes(anOrder.deliveryState)) {
+  if(getStates(MASSACHUSETTS,CONNECTICUT,null).includes(anOrder.deliveryState)) {
      return 1;
   }
-  if ([
-    NEW_YORK,
-    NEW_HAMPSHIRE,
-  ].includes(anOrder.deliveryState)) {
+  if(getStates(NEW_YORK,NEW_HAMPSHIRE,null).includes(anOrder.deliveryState)) {
     return 2;
   }
   return 3;

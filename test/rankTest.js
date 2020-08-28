@@ -145,7 +145,6 @@ rankTest('rank captainHistoryRisk-case3. history length less than 5 and zone is 
       profit: -2,
     }
   ];
-
   const result = captainHistoryRisk(voyage, history);
   const expect = 6;
   t.is(result, expect);
