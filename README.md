@@ -6,8 +6,7 @@ npm run coverage
 
 package.json
 
-`
-{
+`{
   "name": "test2",
   "version": "1.0.0",
   "description": "",
@@ -25,8 +24,6 @@ package.json
     "ava": "^0.25.0",
     "nyc": "^15.1.0"
   }
-}
-  
-`  
+} `  
 `npm install`
 
